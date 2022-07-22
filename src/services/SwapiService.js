@@ -23,9 +23,9 @@ import ReactDOM from 'react-dom/client';
 //=================================================================================================
 
 export default class SwapiService {
-    _apiBase = 'https://swapi.dev/api/'
+    _apiBase = 'https://swapi.co/api';
 
-    async getResource(url) {
+    getResource = async (url) => {
         const res = await fetch(`${this._apiBase}${url}`);
         // const res = await fetch(`${this._apiBase}${url}`); ===
         //Response {type: 'cors', url: 'https://swapi.dev/api/', redirected: false, status: 200, ok: true, …}
@@ -54,7 +54,7 @@ export default class SwapiService {
 
     }
 
-    async getAllPeople() {//персонажи
+    getAllPeople = async () => {//персонажи
         const res = await this.getResource(`/people/`);
         return res.results
             .map(this._transformPerson)
@@ -66,7 +66,7 @@ export default class SwapiService {
         return this._transformPerson(person)
     }
 
-    async getAllPlanets() {//планеты
+    getAllPlanets = async () => {//планеты
         const res = await this.getResource(`/planets/`)
         return res.results.map(this._transformPlanet)
     }
@@ -74,15 +74,15 @@ export default class SwapiService {
 
     async getPlanet(id) {//планета
         const planet = await this.getResource(`/planets/${id}`);
-        return this._createPlanet(planet)
+        return this._transformPlanet(planet)
     }
 
-    async getStarships() {//корабли
-        const res = await this.getResource('starships')
-        return res.result.map(this._transformStarship)
+    getAllStarships = async () => {//корабли
+        const res = await this.getResource('/starships/')
+        return res.results.map(this._transformStarship)
     }
 
-    async getStarship(id) {//корабль
+     getStarship = async (id) => {//корабль
         const starship = await this.getResource(`/starships/${id}`)
         return this._transformStarship(starship)
     }
@@ -92,15 +92,15 @@ export default class SwapiService {
         return item.url.match(idRegExp)[1];
     }
 
-    _createPlanet = (planet) => {
+    _transformPlanet = (planet) => {
         return {
             id: this._extractId(planet),
             name: planet.name,
             population: planet.population,
             rotationPeriod: planet.rotation_period,
             diameter: planet.diameter
-        }
-    }
+        };
+    };
 
     _transformStarship = (starship) => {
         return {
@@ -108,13 +108,13 @@ export default class SwapiService {
             name: starship.name,
             model: starship.model,
             manufacturer: starship.manufacturer,
-            costInCredits: starship.costInCredits,
+            costInCredits: starship.cost_in_credits,
             length: starship.length,
             crew: starship.crew,
             passengers: starship.passengers,
-            cargoCapacity: starship.cargoCapacity
+            cargoCapacity: starship.cargo_capacity
         }
-    }
+    };
 
     _transformPerson = (person) => {
         return {
