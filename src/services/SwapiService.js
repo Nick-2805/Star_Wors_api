@@ -23,7 +23,9 @@ import ReactDOM from 'react-dom/client';
 //=================================================================================================
 
 export default class SwapiService {
-    _apiBase = 'https://swapi.co/api';
+    _apiBase = 'https://swapi.dev/api';
+    _imageBase = 'https://starwars-visualguide.com/assets/img';
+
 
     getResource = async (url) => {
         const res = await fetch(`${this._apiBase}${url}`);
@@ -61,36 +63,51 @@ export default class SwapiService {
             .slice(0, 5)
     }
 
-    async getPerson(id) {//персонаж
+    getPerson = async (id) => {//персонаж
         const person = await this.getResource(`/people/${id}`)
         return this._transformPerson(person)
     }
 
     getAllPlanets = async () => {//планеты
-        const res = await this.getResource(`/planets/`)
-        return res.results.map(this._transformPlanet)
+        const res = await this.getResource(`/planets/`);
+        return res.results
+            .map(this._transformPlanet)
+            .slice(0, 5);
     }
 
 
-    async getPlanet(id) {//планета
+    getPlanet = async (id) => {//планета
         const planet = await this.getResource(`/planets/${id}`);
         return this._transformPlanet(planet)
     }
 
     getAllStarships = async () => {//корабли
-        const res = await this.getResource('/starships/')
-        return res.results.map(this._transformStarship)
+        const res = await this.getResource(`/starships/`);
+        return res.results
+            .map(this._transformStarship)
+            .slice(0, 5);
     }
 
-     getStarship = async (id) => {//корабль
+    getStarship = async (id) => {//корабль
         const starship = await this.getResource(`/starships/${id}`)
         return this._transformStarship(starship)
     }
+    getPersonImage = ({id}) => {
+        return `${this._imageBase}/characters/${id}.jpg`
+    };
+
+    getStarshipImage = ({id}) => {
+        return `${this._imageBase}/starships/${id}.jpg`
+    };
+
+    getPlanetImage = ({id}) => {
+        return `${this._imageBase}/planets/${id}.jpg`
+    };
 
     _extractId = (item) => {
         const idRegExp = /\/([0-9]*)\/$/;
         return item.url.match(idRegExp)[1];
-    }
+    };
 
     _transformPlanet = (planet) => {
         return {
