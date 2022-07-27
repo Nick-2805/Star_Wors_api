@@ -1,118 +1,76 @@
-@keyframes ldio-as1sh4wnkj8 {
-    0% {
-        transform: rotate(0)
-    }
-    100% {
-        transform: rotate(360deg)
-    }
+@keyframes lds-double-ring {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
-.ldio-as1sh4wnkj8 div {
-    box-sizing: border-box !important
+@-webkit-keyframes lds-double-ring {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes lds-double-ring_reverse {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes lds-double-ring_reverse {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
 }
 
-.ldio-as1sh4wnkj8 > div {
-    position: absolute;
-    width: 73.83px;
-    height: 73.83px;
-    top: 16.585px;
-    left: 16.585px;
-    border-radius: 50%;
-    border: 5.3500000000000005px solid #000;
-    border-color: #1d3f72 transparent #1d3f72 transparent;
-    animation: ldio-as1sh4wnkj8 1.25s linear infinite;
+.lds-css {
+  margin: 0 auto;
 }
 
-.ldio-as1sh4wnkj8 > div:nth-child(2), .ldio-as1sh4wnkj8 > div:nth-child(4) {
-    width: 60.99px;
-    height: 60.99px;
-    top: 23.005000000000003px;
-    left: 23.005000000000003px;
-    animation: ldio-as1sh4wnkj8 1.25s linear infinite reverse;
+.lds-double-ring {
+  position: relative;
 }
-
-.ldio-as1sh4wnkj8 > div:nth-child(2) {
-    border-color: transparent #5699d2 transparent #5699d2
+.lds-double-ring div {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  border: 8px solid #000;
+  border-color: #3d7ec0 transparent #3d7ec0 transparent;
+  -webkit-animation: lds-double-ring 1.5s linear infinite;
+  animation: lds-double-ring 1.5s linear infinite;
 }
-
-.ldio-as1sh4wnkj8 > div:nth-child(3) {
-    border-color: transparent
+.lds-double-ring div:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  top: 30px;
+  left: 30px;
+  border-color: transparent #cc4545 transparent #cc4545;
+  -webkit-animation: lds-double-ring_reverse 1.5s linear infinite;
+  animation: lds-double-ring_reverse 1.5s linear infinite;
 }
-
-.ldio-as1sh4wnkj8 > div:nth-child(3) div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotate(45deg);
-}
-
-.ldio-as1sh4wnkj8 > div:nth-child(3) div:before, .ldio-as1sh4wnkj8 > div:nth-child(3) div:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 5.3500000000000005px;
-    height: 5.3500000000000005px;
-    top: -5.3500000000000005px;
-    left: 28.89px;
-    background: #1d3f72;
-    border-radius: 50%;
-    box-shadow: 0 68.48px 0 0 #1d3f72;
-}
-
-.ldio-as1sh4wnkj8 > div:nth-child(3) div:after {
-    left: -5.3500000000000005px;
-    top: 28.89px;
-    box-shadow: 68.48px 0 0 0 #1d3f72;
-}
-
-.ldio-as1sh4wnkj8 > div:nth-child(4) {
-    border-color: transparent;
-}
-
-.ldio-as1sh4wnkj8 > div:nth-child(4) div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotate(45deg);
-}
-
-.ldio-as1sh4wnkj8 > div:nth-child(4) div:before, .ldio-as1sh4wnkj8 > div:nth-child(4) div:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 5.3500000000000005px;
-    height: 5.3500000000000005px;
-    top: -5.3500000000000005px;
-    left: 22.470000000000002px;
-    background: #5699d2;
-    border-radius: 50%;
-    box-shadow: 0 55.64px 0 0 #5699d2;
-}
-
-.ldio-as1sh4wnkj8 > div:nth-child(4) div:after {
-    left: -5.3500000000000005px;
-    top: 22.470000000000002px;
-    box-shadow: 55.64px 0 0 0 #5699d2;
-}
-
-.loadingio-spinner-double-ring-x1vjd7e8lum {
-    margin: 0 auto;
-    width: 107px;
-    height: 107px;
-    display: inline-block;
-    overflow: hidden;
-    background: inherit;
-}
-
-.ldio-as1sh4wnkj8 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform: translateZ(0) scale(1);
-    backface-visibility: hidden;
-    transform-origin: 0 0; /* see note above */
-}
-
-.ldio-as1sh4wnkj8 div {
-    box-sizing: content-box;
+.lds-double-ring {
+  width: 77px !important;
+  height: 77px !important;
+  -webkit-transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
+  transform: translate(-38.5px, -38.5px) scale(0.385) translate(38.5px, 38.5px);
 }

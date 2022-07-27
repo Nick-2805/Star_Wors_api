@@ -1,20 +1,16 @@
-import React from "react";
-import './spiner.css';
+import React from 'react';
 
-const Spiner = () => {
-    return (
-        <div className="loadingio-spinner-double-ring-x1vjd7e8lum">
-            <div className="ldio-as1sh4wnkj8">
-                <div></div>
-                <div></div>
-                <div>
-                    <div></div>
-                </div>
-                <div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-    )
-}
-export default Spiner;
+import './spinner.css';
+
+const Spinner = () => {
+  return (
+    <div className="lds-css">
+      <div className="lds-double-ring">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
+};
+
+export default Spinner;
