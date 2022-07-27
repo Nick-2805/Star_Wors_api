@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Header from '../header';
 import ErrorBoundry from '../error-boundry';
 
 import Row from "../row/row";
-import ItemDetails, {Record} from "../item-details/item-details";
+
+import ItemDetails, { Record } from "../item-details/item-details";
 import SwapiService from "../../services/SwapiService";
 
 import './app.css';
