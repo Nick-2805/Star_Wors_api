@@ -8,6 +8,7 @@ import ItemDetails, {Record} from "../item-details/item-details";
 import SwapiService from "../../services/SwapiService";
 
 import './app.css';
+import ItemList from "../item-list";
 
 export default class App extends Component {
 
@@ -53,10 +54,20 @@ export default class App extends Component {
             <ErrorBoundry>
                 <div className="stardb-app">
                     <Header/>
+                    <ItemList getData={ this.swapiService.getAllPeople}>
+                        {({ name }) => <span>{ name } </span>}
+                    </ItemList>
 
+                    <ItemList
+                        getData={ this.swapiService.getAllStarships}
+                        onItemSelected={() => {}}
+                    >
+                        {({ name }) => <span>{ name } </span>}
+                    </ItemList>
                     <Row
-                        left={personDetails}
-                        right={starshipDetails}/>
+                        // left={personDetails}
+                        // right={starshipDetails}
+                    />
                 </div>
             </ErrorBoundry>
         );
